@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AJC </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="nav-home">Alice J Calvert</a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Works</a>
+      <a href="info.html">Information</a>
+    </nav>
+  </header>
+
+  <main class="works">
+    <!-- Left 2/3: slideshow -->
+    <section class="slideshow" aria-label="Slideshow">
+      <img id="slide-img" src="" alt="">
+      <button class="hit prev" aria-label="Previous image"></button>
+      <button class="hit next" aria-label="Next image"></button>
+    </section>
+
+    <!-- Right 1/3: overleaf info -->
+    <aside class="overleaf">
+      <div class="overleaf-text">
+        <p class="counter" id="slide-counter"></p>
+        <h2 id="slide-title"></h2>
+        <p id="slide-details"></p>
+        <p id="slide-measurements"></p>
+        <p id="slide-year"></p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
