@@ -161,14 +161,20 @@ a:hover { color: var(--muted); }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 760px) {
-  :root { --gutter: 16px; }
+  :root { 
+    --gutter: 16px;
+    --nav-height: 120px; } 
+    /* taller nav so content starts below it */
 
   .nav {
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
   }
   .nav-home {
     position: static;
     transform: none;
+    font-size: 2rem;
   }
 
   .works {
