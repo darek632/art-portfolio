@@ -130,23 +130,34 @@ a:hover { color: var(--muted); }
 /* ---------- Info page ---------- */
 .info {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: calc(var(--nav-height) + var(--gutter)) var(--gutter) var(--gutter);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 48px;
+    gap: clamp(24px, 5vw, 64px);  
+    /* gap shrinks on smaller screens */     
 }
 
 
-.info-text {
+/* .info-text {
   max-width: 44ch;
+} */
+
+.info-img,
+.info-text {
+  flex: 0 1 44ch;
+  min-width: 0;                      /* lets them shrink below 44ch */
 }
 
 .info-img { 
   /* same width as text alongside  */
-  width: 44ch;  
-  /* so it shrinks on narrower screens   */
-  max-width: 45%;             
+ width: 100%;
+ height:auto;
+ max-height: 75vh; 
+ /* tall images stay on screen */
+ object-fit: contain;
+        
   height: auto;
 }
 
@@ -184,12 +195,26 @@ a:hover { color: var(--muted); }
 
   .overleaf { padding-top: 0; }
 
-  info {
+  .info {
     flex-direction: column;
-    gap: 24px;
+    justify-content: flex-start;
+    gap: 20px;
   }
+
   .info-img {
-    max-width: 100%;
+    flex: none;
+    width: 60%;              /* narrower than the screen */
+    max-height: 40vh;        /* never more than 40% of the screen height */
+    object-fit: contain;
+  }
+.info-text {
+  flex: none;
+    width: 85%;
+    font-size: 14px;         /* smaller than the 17px body size */
+}
+
+  .info-text {
+    font-size: 15px;
   }
 
 }
